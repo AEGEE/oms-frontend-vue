@@ -4,19 +4,25 @@ services:
 
   oms-frontend-vue:
     build:
-      context: ./$PATH_FRONTEND_VUE/app/
+      context: ./$PATH_OMS_FRONTEND_VUE/app/
       dockerfile: ./Dockerfile
     image: aegee/oms-frontend-vue
     restart: "no"
     volumes:
       - type: bind
-        source: ./$PATH_FRONTEND_VUE/../app/
+        source: ./$PATH_OMS_FRONTEND_VUE/../app/
         target: /usr/app/
       - type: volume
         source: shared
         target: /usr/app/shared/
     ports:
-      - 80:80
+      - 8083:80
+    labels:
+      - "traefik.frontend.rule=HostRegexp:{domain:[a-z0-9.]+};PathPrefix:/"
+      - "traefik.frontend.priority=11"
+      - "traefik.port=80"
+      - "traefik.enable=true"
+      - "registry.status=status.json"
 
 
 volumes:
