@@ -16,6 +16,7 @@
     "noUnusedParameters": true,
     "pretty": true,
     "removeComments": false,
+    "experimentalDecorators": true,
   },
   "include": [
     "./src/**/*"
