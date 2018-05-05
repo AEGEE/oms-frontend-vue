@@ -14,7 +14,8 @@
     "jquery": "^3.3.1",
     "serve-static": "^1.13.2",
     "vue-class-component": "^6.2.0",
-    "vue-property-decorator": "^6.0.0"
+    "vue-property-decorator": "^6.0.0",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",
